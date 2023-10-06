@@ -1,23 +1,31 @@
 const TelegramBot = require('node-telegram-bot-api');
-const token = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'; // Not a real token
-const bot = new TelegramBot(token, {polling: true});
-const MY_ID = 000000000000001; // Not my real ID
+const dotenv = require('dotenv');
+dotenv.config();
 
-/* CONFIG */
-var config = {
-    saveFolder: 'C:\\users\\<my-username>\\Documents'
-};
+const token = process.env.TOKEN;
+const bot = new TelegramBot(token, {polling: true});
+const config = require('./config.json');
+const userIds = config.users.map(user => user.id);
 
 bot.on('message', function(msg){
-    
-    if (msg.chat.id != MY_ID) return false;
 
-    bot.sendMessage(chatId, 'Procesing...');
+    console.log(msg);
 
-    if (msg.photo.length > 0) {
-        var photoObject = msg.photo[msg.photo.length - 1];
-        var photoId = photoObject.file_id;
-        bot.downloadFile(photoId, config.saveFolder);
+    if (userIds.includes(msg.chat.id)) {
+
+        if (msg.photo.length > 0) {
+            bot.sendMessage(msg.chat.id, 'Procesing...');
+            var photoObject = msg.photo[msg.photo.length - 1];
+            var photoId = photoObject.file_id;
+            bot.downloadFile(photoId, config.saveFolder).then(()=>{
+                bot.sendMessage(msg.chat.id, 'Done!');
+            });
+        }
+
+    } else {
+        console.log("Not allowed user");
     }
 
 });
+
+bot.on("polling_error", console.log);
