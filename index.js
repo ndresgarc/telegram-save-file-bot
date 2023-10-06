@@ -22,6 +22,8 @@ bot.on('message', function(msg){
             });
         }
 
+        bot.sendMessage(msg.chat.id, 'Hello, ' + msg.from.first_name + '!');
+
     } else {
         console.log("Not allowed user");
     }
