@@ -21,8 +21,8 @@ This bot it's supposed to be executed from a machine that can access the destina
 
 ## Changelog
 
-### 0.1.1 Init
+### v0.1.1
 - Added .env file configuration
 
-### 0.1.0 Init
+### v0.1.0 (init)
 - Basic functionality, only for photos
