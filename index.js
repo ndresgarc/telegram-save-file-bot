@@ -2,10 +2,22 @@ const TelegramBot = require('node-telegram-bot-api');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const token = process.env.TOKEN;
-const bot = new TelegramBot(token, {polling: true});
-const config = require('./config.json');
-const userIds = config.users.map(user => user.id);
+let config = {
+    saveFolder: process.env.SAVE_FOLDER,
+    token: process.env.TELEGRAM_BOT_TOKEN,
+    users: process.env.ALLOWED_USERS.split(',').map((user) => {
+        return {
+            name: user.split(':')[0],
+            id: user.split(':')[1]
+        }
+    })
+};
+
+
+const bot = new TelegramBot(config.token, {polling: true});
+const userIds = config.users.map(user => +user.id);
+
+console.log(userIds);
 
 bot.on('message', function(msg){
 
