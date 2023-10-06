@@ -1,7 +1,7 @@
 # telegram--save-file-bot
 
-A Node.js Telegram Bot to process and save the messages that receives and store them in a configurable folder.
-It verifies Telegram user ID before saving the file.
+A Node.js Telegram Bot to process and save the photos that receives and store them in a configurable folder.
+It verifies Telegram user ID is in a whitelist before accepting the photo.
 
 ## Install
 ```
@@ -10,17 +10,19 @@ npm install
 ```
 
 ## Generate Telegram Bot token
-https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token
+https://core.telegram.org/bots/api#authorizing-your-bot
 
 ## Get your telegram ID
-https://support.bigone.com/hc/en-us/articles/360008014894-How-to-get-the-Telegram-user-ID-
+Using https://t.me/userinfobot from a Telegram client
 
 ## Notes
 The bot process can be closed. Next time it runs it will process all the pending messages.
-
-This bot it's supposed to be executed from a machine that can access the destination folder.
+This bot it's supposed to be executed from a machine that can access the destination folder and with an user that has the proper permissions to write on it.
 
 ## Changelog
+
+### 0.1.1 Init
+- Added .env file configuration
 
 ### 0.1.0 Init
 - Basic functionality, only for photos

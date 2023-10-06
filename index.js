@@ -13,7 +13,6 @@ let config = {
     })
 };
 
-
 const bot = new TelegramBot(config.token, {polling: true});
 const userIds = config.users.map(user => +user.id);
 
