@@ -12,5 +12,9 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "node-telegram-bot-api": "^0.40.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndresgarc/telegram-save-file-bot.git"
   }
 }
