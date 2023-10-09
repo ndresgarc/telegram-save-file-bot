@@ -3,7 +3,7 @@
 A Node.js Telegram Bot to process and save the photos that receives and store them in a configurable folder.
 It verifies Telegram user ID is in a whitelist before accepting the photo.
 
-## Install
+## Clone
 ```
 git clone https://github.com/ndresgarc/telegram-save-file-bot.git
 npm install
@@ -14,6 +14,11 @@ https://core.telegram.org/bots/api#authorizing-your-bot
 
 ## Get your telegram ID
 Using https://t.me/userinfobot from a Telegram client
+
+## Create Docker image
+```
+    docker build . -t <user>/<image>
+```
 
 ## Notes
 The bot process can be closed. Next time it runs it will process all the pending messages.
