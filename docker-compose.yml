@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+    telegram-bot:
+        image: ndresgarc/telegram-save-file-bot
+        environment:
+            - TELEGRAM_BOT_TOKEN: ''
+            - ALLOWED_USERS: ''
+            - SAVE_FOLDER: ''
+        volumes:
+            # Map the SAVE_FOLDER to a volume or a folder on the host
+            - '/saved-files:<SAVE_FOLDER>'
+        restart: unless-stopped
