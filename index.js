@@ -24,11 +24,19 @@ bot.on('message', function(msg){
 
     if (userIds.includes(msg.chat.id)) {
 
-        if (msg.photo.length > 0) {
+        if (msg.photo && msg.photo.length > 0) {
             bot.sendMessage(msg.chat.id, 'Procesing...');
             var photoObject = msg.photo[msg.photo.length - 1];
             var photoId = photoObject.file_id;
             bot.downloadFile(photoId, config.saveFolder).then(()=>{
+                bot.sendMessage(msg.chat.id, 'Done!');
+            });
+        }
+
+        if (msg.document) {
+            bot.sendMessage(msg.chat.id, 'Procesing...');
+            var documentId = msg.document.file_id;
+            bot.downloadFile(documentId, config.saveFolder).then(()=>{
                 bot.sendMessage(msg.chat.id, 'Done!');
             });
         }
