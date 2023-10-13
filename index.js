@@ -41,6 +41,14 @@ bot.on('message', function(msg){
             });
         }
 
+        if (msg.video) {
+            bot.sendMessage(msg.chat.id, 'Procesing...');
+            var videoId = msg.video.file_id;
+            bot.downloadFile(videoId, config.saveFolder).then(()=>{
+                bot.sendMessage(msg.chat.id, 'Done!');
+            });
+        }
+
         bot.sendMessage(msg.chat.id, 'Hello, ' + msg.from.first_name + '!');
 
     } else {
