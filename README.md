@@ -26,6 +26,11 @@ This bot it's supposed to be executed from a machine that can access the destina
 
 ## Changelog
 
+### v0.2.0
+- Added support for NPX
+- Added support for documents
+- Added support for videos
+
 ### v0.1.1
 - Added .env file configuration
 
