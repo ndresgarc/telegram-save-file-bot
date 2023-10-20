@@ -59,6 +59,13 @@ bot.on('message', function(msg){
             });
         }
 
+        if (msg.location) {
+            bot.sendMessage(msg.chat.id, 'Procesing...');
+            var location = msg.location;
+            console.log(location);
+            bot.sendMessage(msg.chat.id, 'Done!');
+        }
+
         bot.sendMessage(msg.chat.id, 'Hello, ' + msg.from.first_name + '!');
 
     } else {
