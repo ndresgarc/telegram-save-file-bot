@@ -51,6 +51,14 @@ bot.on('message', function(msg){
             });
         }
 
+        if (msg.voice) {
+            bot.sendMessage(msg.chat.id, 'Procesing...');
+            var voiceId = msg.voice.file_id;
+            bot.downloadFile(voiceId, config.saveFolder).then(()=>{
+                bot.sendMessage(msg.chat.id, 'Done!');
+            });
+        }
+
         bot.sendMessage(msg.chat.id, 'Hello, ' + msg.from.first_name + '!');
 
     } else {
