@@ -1,5 +1,7 @@
 #! /usr/bin/env node
 
+const fs = require('fs');
+
 const TelegramBot = require('node-telegram-bot-api');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -62,7 +64,13 @@ bot.on('message', function(msg){
         if (msg.location) {
             bot.sendMessage(msg.chat.id, 'Procesing...');
             var location = msg.location;
-            console.log(location);
+            fs.writeFile(`${config.saveFolder}/location-${msg.from.username}-${Date.now()}.json`, JSON.stringify(location, null, 2), (error) => {
+                if (error) {
+                  console.log('An error has occurred ', error);
+                  return;
+                }
+                console.log('Data written successfully to disk');
+            });
             bot.sendMessage(msg.chat.id, 'Done!');
         }
 
