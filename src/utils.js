@@ -20,6 +20,10 @@ export function getHandler(message) {
         return "location";
     }
 
+    if (message.text) {
+        return "text";
+    }
+
     return false;
 
 }
