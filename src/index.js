@@ -1,11 +1,11 @@
 #! /usr/bin/env node
 
-const fs = require('fs');
+import fs from 'fs';
+import TelegramBot from 'node-telegram-bot-api';
+import dotenv from 'dotenv';
 
-import { isAllowedUser, getMessageType } from './utils';
+import { isAllowedUser, getHandler } from './utils.js';
 
-const TelegramBot = require('node-telegram-bot-api');
-const dotenv = require('dotenv');
 dotenv.config();
 
 let config = {
