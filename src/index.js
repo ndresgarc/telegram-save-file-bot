@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 
+import { isAllowedUser, getMessageType } from './utils';
+
 const TelegramBot = require('node-telegram-bot-api');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -26,7 +28,11 @@ bot.on('message', function(msg){
 
     console.log(msg);
 
-    if (userIds.includes(msg.chat.id)) {
+    console.log(getHandler(msg));
+
+    console.log(isAllowedUser(userIds, msg.chat.id));
+
+    if (isAllowedUser(userIds, msg.chat.id)) {
 
         if (msg.photo && msg.photo.length > 0) {
             bot.sendMessage(msg.chat.id, 'Procesing...');
