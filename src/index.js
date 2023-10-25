@@ -4,25 +4,18 @@ import fs from 'fs';
 import TelegramBot from 'node-telegram-bot-api';
 import dotenv from 'dotenv';
 
-import { isAllowedUser, getHandler } from './utils.js';
+import { 
+    getHandler,
+    getUsersIds,
+    isAllowedUser, 
+    loadConfig 
+} from './utils.js';
+
+import { handlers } from './handlers/index.js';
 
 dotenv.config();
-
-let config = {
-    saveFolder: process.env.SAVE_FOLDER,
-    token: process.env.TELEGRAM_BOT_TOKEN,
-    users: process.env.ALLOWED_USERS.split(',').map((user) => {
-        return {
-            name: user.split(':')[0],
-            id: user.split(':')[1]
-        }
-    })
-};
-
-const bot = new TelegramBot(config.token, {polling: true});
-const userIds = config.users.map(user => +user.id);
-
-console.log(userIds);
+let config = loadConfig();
+const bot = new TelegramBot( config.token, { polling: true });
 
 bot.on('message', function(msg){
 
@@ -30,7 +23,7 @@ bot.on('message', function(msg){
 
     console.log(getHandler(msg));
 
-    console.log(isAllowedUser(userIds, msg.chat.id));
+    console.log(isAllowedUser(getUsersIds(config), msg.chat.id));
 
     if (isAllowedUser(userIds, msg.chat.id)) {
 
