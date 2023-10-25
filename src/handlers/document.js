@@ -1,4 +1,4 @@
-export const document = (bot, userIds) => {
+export const document = (msg, bot, config) => {
     console.log('document handler');
 
 };
