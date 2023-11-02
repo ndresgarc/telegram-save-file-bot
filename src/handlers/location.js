@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 export const location = (msg, bot, config) => {
     console.log('location handler');
     bot.sendMessage(msg.chat.id, 'Procesing...');
