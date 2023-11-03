@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 
-import fs from 'fs';
 import TelegramBot from 'node-telegram-bot-api';
 import dotenv from 'dotenv';
 
