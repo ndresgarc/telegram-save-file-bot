@@ -28,6 +28,7 @@ export function getHandler(message) {
         return "text";
     }
 
+    console.log("No handler found");
     return false;
 
 }
