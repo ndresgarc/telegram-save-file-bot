@@ -6,6 +6,7 @@ import { location } from './location.js';
 import { photo } from './photo.js';
 import { video } from './video.js';
 import { voice } from './voice.js';
+import { text } from './text.js';
 import { url } from './url.js';
 
 export const handlers = {
@@ -14,7 +15,8 @@ export const handlers = {
     document,
     location,
     photo,
+    text,
+    url,
     video,
-    voice,
-    url
+    voice
 }
