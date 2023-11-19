@@ -8,7 +8,7 @@
     "telegram-save-file-bot": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "ndresgarc",
@@ -20,5 +20,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ndresgarc/telegram-save-file-bot.git"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
