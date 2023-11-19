@@ -8,7 +8,7 @@ import {
     getUsersIds,
     isAllowedUser, 
     loadConfig 
-} from './utils.js';
+} from './utils-index.js';
 
 import { handlers } from './handlers/index.js';
 
