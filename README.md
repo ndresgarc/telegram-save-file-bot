@@ -36,3 +36,9 @@ This bot it's supposed to be executed from a machine that can access the destina
 
 ### v0.1.0 (init)
 - Basic functionality, only for photos
+
+## TODO
+
+- Rewrite in Typescript
+- Add testing using Jest
+- Save date funcionality, format -> "date: 31-dec, New years eve"
