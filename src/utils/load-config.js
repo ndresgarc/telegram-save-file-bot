@@ -1,4 +1,5 @@
 module.exports = () => {
+
     return {
         token: process.env.TELEGRAM_BOT_TOKEN,
         users: process.env.ALLOWED_USERS.split(',').map((user) => {
@@ -8,4 +9,5 @@ module.exports = () => {
             }
         })
     };
+    
 };
