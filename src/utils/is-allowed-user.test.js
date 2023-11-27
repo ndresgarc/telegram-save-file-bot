@@ -10,3 +10,14 @@ test('Is allowed user', () => {
         true
     );
 });
+
+test('Is NOT allowed user', () => {
+    expect(
+        isAllowedUser(
+            [ 1234, 5678 ],
+            9999
+        )
+    ).toEqual(
+        false
+    );
+});
