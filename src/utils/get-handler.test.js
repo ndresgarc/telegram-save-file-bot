@@ -13,7 +13,7 @@ test('Get video handler', () => {
         getHandler({
             video: {}
         })
-    ).toBe("photo");
+    ).toBe("video");
 });
 
 test('Get document handler', () => {
@@ -21,5 +21,5 @@ test('Get document handler', () => {
         getHandler({
             document: {}
         })
-    ).toBe("photo");
+    ).toBe("document");
 });
