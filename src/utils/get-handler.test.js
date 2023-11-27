@@ -7,3 +7,19 @@ test('Get photo handler', () => {
         })
     ).toBe("photo");
 });
+
+test('Get video handler', () => {
+    expect(
+        getHandler({
+            video: {}
+        })
+    ).toBe("photo");
+});
+
+test('Get document handler', () => {
+    expect(
+        getHandler({
+            document: {}
+        })
+    ).toBe("photo");
+});
