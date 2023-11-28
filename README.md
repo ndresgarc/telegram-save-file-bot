@@ -17,7 +17,12 @@ Using https://t.me/userinfobot from a Telegram client
 
 ## Create Docker image
 ```
-    docker build . -t <user>/<image>
+docker build . -t <user>/<image>
+```
+
+## Testing
+```
+npm run test
 ```
 
 ## Notes
@@ -25,6 +30,8 @@ The bot process can be closed. Next time it runs it will process all the pending
 This bot it's supposed to be executed from a machine that can access the destination folder and with an user that has the proper permissions to write on it.
 
 ## Changelog
+
+### v0.3.0
 
 ### v0.2.0
 - Added support for NPX
@@ -36,3 +43,9 @@ This bot it's supposed to be executed from a machine that can access the destina
 
 ### v0.1.0 (init)
 - Basic functionality, only for photos
+
+## TODO
+
+- Rewrite in Typescript
+- Add testing using Jest
+- Save date funcionality, format -> "date: 31-dec, New years eve"
