@@ -21,5 +21,5 @@ test('Get document handler', () => {
         getHandler({
             document: {}
         })
-    ).toBe("incorrect");
+    ).toBe("document");
 });
