@@ -7,7 +7,8 @@ module.exports = () => {
                 name: user.split(':')[0],
                 id: user.split(':')[1]
             }
-        })
+        }),
+        saveFolder: process.env.SAVE_FOLDER
     };
     
 };
