@@ -3,12 +3,10 @@
 import TelegramBot from 'node-telegram-bot-api';
 import dotenv from 'dotenv';
 
-import { 
-    getHandler,
-    getUsersIds,
-    isAllowedUser, 
-    loadConfig 
-} from './utils/index.js';
+import getHandler from './utils/get-handler.cjs';
+import getUsersIds from './utils/get-user-ids.cjs';
+import isAllowedUser from './utils/is-allowed-user.cjs';
+import loadConfig from './utils/load-config.cjs';
 
 import { handlers } from './handlers/index.js';
 
@@ -27,8 +25,6 @@ bot.onText(/\/start/, (msg) => {
 });
 
 bot.on('message', function(msg) {
-
-    
 
     if (isAllowedUser(getUsersIds(config), msg.chat.id)) {
         const handler = getHandler(msg);

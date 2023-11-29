@@ -1,9 +1,9 @@
 import getHandler from './get-handler.cjs';
-import getUsersIds from './get-users-ids';
-import isAllowedUser from './is-allowed-user';
-import loadConfig from './load-config';
+import getUsersIds from './get-users-ids.cjs';
+import isAllowedUser from './is-allowed-user.cjs';
+import loadConfig from './load-config.cjs';
 
-export const getHandler = getHandler;
-export const getUsersIds = getUsersIds;
-export const isAllowedUser = isAllowedUser;
-export const loadConfig = loadConfig;
+export { getHandler };
+export { getUsersIds };
+export { isAllowedUser };
+export { loadConfig };
