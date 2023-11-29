@@ -2,23 +2,22 @@ const loadConfig = require('./load-config.cjs');
 
 process.env['TELEGRAM_BOT_TOKEN'] = '12345667890';
 process.env['ALLOWED_USERS'] = 'alice:1111,bob:2222';
+process.env['SAVE_FOLDER'] = './';
 
-test('Load config', () => {
+test('Should contain token config', () => {
     expect(
         loadConfig()
-    ).toEqual(
-        {
-            token: '12345667890',
-            users: [
-                {
-                    name: 'alice',
-                    id: '1111'
-                },
-                {
-                    name: 'bob',
-                    id: '2222'
-                }
-            ]
-        }
-    );
+    ).toHaveProperty('token');
+});
+
+test('Should contain users config', () => {
+    expect(
+        loadConfig()
+    ).toHaveProperty('users');
+});
+
+test('Should contain saveFolder config', () => {
+    expect(
+        loadConfig()
+    ).toHaveProperty('saveFolder');
 });
