@@ -1,5 +1,9 @@
 module.exports = (message) => {
 
+    if ( message.contact) {
+        return "contact";
+    }
+
     if (message.photo && message.photo.length > 0) {
         return "photo";
     }
