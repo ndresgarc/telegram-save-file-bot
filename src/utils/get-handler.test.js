@@ -23,3 +23,13 @@ test('Get document handler', () => {
         })
     ).toBe("document");
 });
+
+test('Get contact handler', () => {
+    expect(
+        getHandler({
+            contact: {
+                phone_number: '+123412341234'
+            }
+        })
+    ).toBe("contact");
+});
