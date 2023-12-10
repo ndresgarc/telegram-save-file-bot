@@ -24,6 +24,10 @@ module.exports = (message) => {
         return "location";
     }
 
+    if (message.sticker) {
+        return "sticker";
+    }
+
     if (message.text) {
         return "text";
     }
