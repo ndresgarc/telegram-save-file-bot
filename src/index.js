@@ -14,16 +14,6 @@ dotenv.config();
 let config = loadConfig();
 const bot = new TelegramBot( config.token, { polling: true });
 
-bot.onText(/\/start/, (msg) => {
-
-    bot.sendMessage(msg.chat.id, "Welcome", {
-    "reply_markup": {
-        "keyboard": [["Sample text", "Second sample"],   ["Keyboard"], ["I'm robot"]]
-        }
-    });
-    
-});
-
 bot.on('message', function(msg) {
 
     if (isAllowedUser(getUsersIds(config), msg.chat.id)) {
