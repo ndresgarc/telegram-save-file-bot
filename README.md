@@ -1,7 +1,7 @@
 # telegram-save-file-bot
 
-A Node.js Telegram Bot to process and save the photos that receives and store them in a configurable folder.
-It verifies Telegram user ID is in a whitelist before accepting the photo.
+A Node.js Telegram Bot to process and save the information that receives and store them in a configurable folder.
+It verifies Telegram user ID is in a whitelist.
 
 ## Clone
 ```
