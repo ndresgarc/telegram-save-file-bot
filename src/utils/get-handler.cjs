@@ -28,6 +28,10 @@ module.exports = (message) => {
         return "sticker";
     }
 
+    if (message.text && message.text.startsWith("/")) {
+        return "command";
+    }
+
     if (message.text) {
         return "text";
     }
