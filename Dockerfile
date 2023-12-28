@@ -14,4 +14,6 @@ RUN npm ci --omit=dev
 
 COPY . .
 
+VOLUME /usr/src/app/downloads
+
 CMD [ "node", "index.js" ]
